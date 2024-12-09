@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
-import 'package:gemini_mini/chatpage.dart';
-import 'package:gemini_mini/consts.dart';
+import 'package:gemini_mini/screen/chatbot_screen/chatpage.dart';
+import 'package:gemini_mini/screen/chatbot_screen/consts.dart';
+//import 'package:gemini_mini/api/api_key.dart';
+
 void main() {
-  Gemini.init(apiKey: API_KEY);
+  Gemini.init(apiKey: apiKey);
   runApp(const MyApp());
 }
 
@@ -12,14 +14,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const Chatpage(),
+      home: Chatpage(),
     );
   }
 }
-
